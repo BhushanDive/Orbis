@@ -1,0 +1,11 @@
+Orbis is supposed to be a physics engine for particle simulation like sand and fluid simulation.
+
+
+### Basic Goal 
+1. Create some simple editor tools.
+    1.1 A small text box at the left corner of the screen which shows the X and Y coordinate the Mouse is hovering over.
+    1.2 A button to turn the XY coordinate on and off.
+
+2. Create a config file and import Raylib there and import config file everywhere else.
+
+3. Create a 2D Grid to start the simulation with.
