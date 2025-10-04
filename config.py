@@ -1,1 +1,6 @@
 import pyray as pr
+
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 800
+
+TARGET_FPS = 60

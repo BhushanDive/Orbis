@@ -1,5 +1,5 @@
-from config import pr
-pr.set_target_fps(60)
+from config import pr, TARGET_FPS
+pr.set_target_fps(TARGET_FPS)
 
 
 class Utils():

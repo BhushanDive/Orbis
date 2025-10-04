@@ -1,4 +1,4 @@
-from config import pr
+from config import pr, SCREEN_HEIGHT,SCREEN_WIDTH
 from button import Button, ToggleButton
 from game import Game
 import random
@@ -6,8 +6,7 @@ import random
 
 
 ### Setting Screen Size
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 800
+
 pr.init_window(SCREEN_WIDTH, SCREEN_HEIGHT, "Orbis")
 game = Game()
 
@@ -17,7 +16,7 @@ def gen_matrix2D(rows, columns):
     arr2D = [[0] * columns for _ in range(rows)]
     return arr2D
 
-Matrix2D = 0
+
 cell_nums = 40
 cell_height = 0
 cell_width = 0
@@ -36,7 +35,9 @@ while not pr.window_should_close():
     
     i = int(mouse_coords.x // cell_width)
     j = int(mouse_coords.y // cell_height)
-    if pr.is_mouse_button_down(pr.MOUSE_BUTTON_LEFT):
+    mouse_bounds_x = True if mouse_coords.x < SCREEN_WIDTH else False
+    mouse_bounds_y = True if mouse_coords.y < SCREEN_HEIGHT else False
+    if pr.is_mouse_button_down(pr.MOUSE_BUTTON_LEFT) and mouse_bounds_x and mouse_bounds_y:
         if 0 <= i<= cell_nums and 0 <= j <= cell_nums:
             print(i,j)
             Matrix2D[i][j] = 1
